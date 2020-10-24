@@ -1,4 +1,4 @@
-package com.weborders.utils;
+package com.weborders.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +21,7 @@ public class Driver {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            String browser = "chrome";
+            String browser = ConfigurationReader.getProperty("browser");
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
